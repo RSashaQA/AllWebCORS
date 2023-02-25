@@ -3,15 +3,10 @@ pipeline {
   stages {
     stage('prepare workspace') {
       steps {
-        if (isUnix())
-        {sh '''
+        bat '''
           npx playwright install firefox
           npm i -D @playwright/test allure-playwright
-        '''} else
-        {bat '''
-          npx playwright install firefox
-          npm i -D @playwright/test allure-playwright
-        '''}
+        '''
       }
     }  
     stage('test') {

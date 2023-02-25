@@ -21,12 +21,11 @@ pipeline {
   }
     post('allure report'){
       always{
-        bat'''
-        allure generate allure-results --clean
-        '''
-        bat'''
-        open allure-report
-        '''
+        allure([
+        includeProperties: false, 
+        jdk: 'JDK', 
+        results: [[path: 'allure-results']]
+        ])
       }
     }
   }

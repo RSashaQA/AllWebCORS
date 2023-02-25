@@ -21,15 +21,12 @@ pipeline {
   }
     post('allure report'){
       always{
-        script {
-            allure([
-                    includeProperties: false,
-                    jdk: '',
-                    properties: [],
-                    reportBuildPolicy: 'ALWAYS',
-                    results: [[path: 'target/allure-results']]
-            ])
+        bat'''
+        allure generate allure-results --clean
+        '''
+        bat'''
+        open allure-report
+        '''
       }
     }
   }
-}

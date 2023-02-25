@@ -4,3 +4,4 @@ node_modules/
 /playwright/.cache/
 /screenshots/
 /allure-results/
+/allure-report/

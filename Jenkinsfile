@@ -17,7 +17,7 @@ pipeline {
         npx playwright test --workers 6 --project=firefox --reporter=line,allure-playwright
         '''
       }
-    }https://.slack.com/archives/C03RU5SC5A5
+    }
   }
     post('allure report'){
       always{

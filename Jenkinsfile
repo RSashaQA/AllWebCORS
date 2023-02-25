@@ -21,7 +21,8 @@ pipeline {
   }
     post('allure report'){
       always{
-        allure([
+        script {
+          allure([
         includeProperties: false, 
         jdk: 'JDK', 
         results: [[path: 'allure-results']]
@@ -29,3 +30,4 @@ pipeline {
       }
     }
   }
+} 

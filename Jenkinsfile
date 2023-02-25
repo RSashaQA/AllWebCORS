@@ -4,18 +4,15 @@ pipeline {
     stage('prepare workspace') {
       steps {
         sh '''
-          rm -rf $WORKSPACE/allure-results
-          npx playwright install
-          npm i -D @playwright/test
-          npm i -D experimental-allure-playwright
-          npm i -D allure-commandline
+          npx playwright install firefox
+          npm i -D @playwright/test allure-playwright
         '''
       }
     }  
     stage('test') {
       steps {
         sh '''
-        npx playwright test --workers 6 --reporter=line,experimental-allure-playwright
+        npx playwright test --project=firefox
         '''
       } 
     }

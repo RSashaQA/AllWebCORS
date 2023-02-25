@@ -16,8 +16,11 @@ pipeline {
         bat '''
         npx playwright test --workers 6 --project=firefox --reporter=line,allure-playwright
         '''
-      } 
-    }
+      }
+      failure{
+      telegramSend(message: 'test from jenkins', chatId: -843380700)
+      }
+    } 
   }
     post('allure report'){
       always{

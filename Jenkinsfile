@@ -5,6 +5,8 @@ pipeline {
       steps {
         bat '''
           npx playwright install firefox
+        '''
+        bat '''
           npm i -D @playwright/test allure-playwright
         '''
       }

@@ -11,7 +11,7 @@ pipeline {
     }  
     stage('test') {
       steps {
-        sh '''
+        bat '''
         npx playwright test --project=firefox
         '''
       } 

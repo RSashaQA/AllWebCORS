@@ -14,7 +14,7 @@ pipeline {
     stage('Testing') {
       steps {
         bat '''
-        npx playwright test --workers 5 --project=firefox --reporter=line,allure-playwright --retries=3
+        npx playwright test --workers 5 --project=firefox --reporter=line,allure-playwright
         '''
       }
     }
@@ -30,7 +30,9 @@ pipeline {
       }
     }
       failure {
-        slackSend color: "ff0000", message: "I see an error in the console, maybe even CORS. CHECK IT!"
+        bat '''
+        java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.2.1.jar
+        '''
     }
   }
 }

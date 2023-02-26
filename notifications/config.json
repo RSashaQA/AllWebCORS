@@ -1,0 +1,23 @@
+{
+  "base": {
+  "logo": "logo.png",
+  "project": "Errors on console",
+  "environment": "",
+  "comment": "I see an ERROR in the console. CHECK IT!",
+  "reportLink": "",
+  "language": "en",
+  "allureFolder": "allure-report",
+  "enableChart": true
+},
+    "slack": {
+      "token": "xoxb-3803282626292-4860770107890-P5pfmQ7VquRUWn3MpBEScBVK",
+      "chat": "monitoring-web",
+      "replyTo": ""
+    },
+    "proxy": {
+        "host": "",
+        "port": 0,
+        "username": "",
+        "password": ""
+      }
+  }

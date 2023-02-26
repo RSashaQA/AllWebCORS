@@ -14,12 +14,17 @@ pipeline {
     stage('test') {
       steps {
         bat '''
-        npx playwright test --workers 6 --project=firefox --reporter=line,allure-playwright
+        npx playwright test --workers 5 --project=firefox --reporter=line,allure-playwright
         '''
       }
     }
   }
     post('allure report'){
+          always{
+      bat'''
+      allure generate allure-results -o allure-report --clean
+      '''
+    }
       always{
         script {
           allure([

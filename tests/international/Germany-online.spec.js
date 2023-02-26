@@ -1,18 +1,18 @@
 const { test, expect } = require("@playwright/test");
-const { teapot_error, media_error, videojs_error, playlist_error, cors_error, broadcaster } = require("../constants")
-test.setTimeout(20000);
+const { teapot_error, media_error, videojs_error, playlist_error, cors_error, broadcaster } = require("../../constants")
+test.setTimeout(120000);
 test.use({
   viewport: { width: 1920, height: 1080 },
   ignoreHTTPSErrors: true,
   // extraHTTPHeaders: {
   //   Accept: '*/*',
-  //   Referer: 'https://litehd.tv/',
-  //   Origin: 'https://litehd.tv',
+  //   Referer: 'https://germany-online.tv/',
+  //   Origin: 'https://germany-online.tv',
   //   Connection: 'keep-alive'
   // }
 });
 
-test("visit Lite website and check errors in console with logger", async ({ page }) => {
+test("visit germany-online.tv website and check errors in console with logger", async ({ page }) => {
 
   page.on("console", (msg) => {
     if (
@@ -26,17 +26,15 @@ test("visit Lite website and check errors in console with logger", async ({ page
     }
   })
 
-  const response = await page.goto(process.env.ENVIRONMENT_URL || 'https://litehd.tv/channel/firstvegan');
+  const response = await page.goto(process.env.ENVIRONMENT_URL || 'https://germany-online.tv/filstalwelle_tv_deu');
   expect(response.status()).toBeLessThan(400);
 
   try {
     await page.locator('#video > button').click({ timeout: 2000 });
-  } catch (error) {
-    console.log('"Play" buttom is not visible')
-  }
+  } catch (error) {}
 
   await page.waitForResponse(resp => resp.url().includes(broadcaster), { timeout: 50000 })
 
   await page.waitForTimeout(5000)
-  await page.screenshot({ path: "screenshots/litehd.tv.png" })
+  await page.screenshot({ path: "screenshots/germany-online.tv.png" })
 })

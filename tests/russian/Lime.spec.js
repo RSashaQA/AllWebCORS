@@ -1,5 +1,5 @@
 const { test, expect } = require("@playwright/test");
-const { teapot_error, media_error, videojs_error, playlist_error, cors_error, broadcaster } = require("../constants")
+const { teapot_error, media_error, videojs_error, playlist_error, cors_error, broadcaster } = require("../../constants")
 test.setTimeout(120000);
 test.use({
   viewport: { width: 1920, height: 1080 },
@@ -12,7 +12,7 @@ test.use({
   // }
 });
 
-test("visit Lime website and check errors in console with logger", async ({ page }) => {
+test("visit limehd.tv website and check errors in console with logger", async ({ page }) => {
 
   page.on("console", (msg) => {
     if (

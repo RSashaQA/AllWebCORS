@@ -14,7 +14,7 @@ pipeline {
     stage('Testing') {
       steps {
         bat '''
-        npx playwright test --workers 5 --project=firefox --reporter=line,allure-playwright
+        npx playwright test --workers 5 --project=firefox --reporter=line,allure-playwright --retries=3
         '''
       }
     }

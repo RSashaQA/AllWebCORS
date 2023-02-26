@@ -1,5 +1,5 @@
 const { test, expect } = require("@playwright/test");
-const { teapot_error, media_error, videojs_error, playlist_error, cors_error, broadcaster } = require("../constants")
+const { teapot_error, media_error, videojs_error, playlist_error, cors_error, broadcaster } = require("../../constants")
 test.setTimeout(120000);
 test.use({
   viewport: { width: 1920, height: 1080 },
@@ -12,7 +12,7 @@ test.use({
   // }
 });
 
-test("visit Limex website and check errors in console with logger", async ({ page }) => {
+test("visit limex.tv website and check errors in console with logger", async ({ page }) => {
 
   page.on("console", (msg) => {
     if (
@@ -31,9 +31,7 @@ test("visit Limex website and check errors in console with logger", async ({ pag
 
   try {
     await page.locator('.vjs-big-play-button').click({ timeout: 2000 });
-  } catch (error) {
-    console.log('"Play" buttom is not visible')
-  }
+  } catch (error) {}
   
   await page.waitForResponse(resp => resp.url().includes(broadcaster), { timeout: 50000 })
   

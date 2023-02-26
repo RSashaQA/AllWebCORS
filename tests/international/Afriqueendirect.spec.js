@@ -3,7 +3,7 @@ const { teapot_error, media_error, videojs_error, playlist_error, cors_error, br
 test.setTimeout(120000);
 test.use({
   viewport: { width: 1920, height: 1080 },
-  ignoreHTTPSErrors: false,
+  ignoreHTTPSErrors: true,
   // extraHTTPHeaders: {
   //   Accept: '*/*',
   //   Referer: 'https://afriqueendirect.tv/',

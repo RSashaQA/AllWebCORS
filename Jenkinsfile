@@ -34,7 +34,7 @@ pipeline {
     }
       failure {
         bat '''
-        call report.bat
+        java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.2.1.jar
         '''
     }
   }

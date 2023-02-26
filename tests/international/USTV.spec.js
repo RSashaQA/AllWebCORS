@@ -3,7 +3,7 @@ const { teapot_error, media_error, videojs_error, playlist_error, cors_error, br
 test.setTimeout(120000);
 test.use({
   viewport: { width: 1920, height: 1080 },
-  ignoreHTTPSErrors: true,
+  ignoreHTTPSErrors: false,
   // extraHTTPHeaders: {
   //   Accept: '*/*',
   //   Referer: 'https://us-live.tv/',

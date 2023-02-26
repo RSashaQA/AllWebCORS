@@ -40,8 +40,7 @@ pipeline {
         cd allure-report | npx netlify build
         '''
         bat '''
-        cd allure-report | npx netlify deploy --prod
-        .
+        cd allure-report | npx netlify deploy --prod | .
         '''
     }
   }

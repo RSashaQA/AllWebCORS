@@ -9,6 +9,9 @@ pipeline {
         bat '''
           npm i -D @playwright/test allure-playwright
         '''
+        bat '''
+      allure generate allure-results -o allure-report --clean
+        '''
       }
     }  
     stage('test') {
@@ -21,9 +24,6 @@ pipeline {
   }
     post('allure report'){
       always{
-        bat'''
-      allure generate allure-results -o allure-report --clean
-      ''',
         script {
           allure([
         includeProperties: false, 

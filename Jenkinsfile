@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Install browser firefox') {
+    stage('Preparation of the working space') {
       steps {
         bat '''
           npx playwright install firefox
@@ -9,24 +9,18 @@ pipeline {
         bat '''
           npm i -D @playwright/test allure-playwright allure-commandline
         '''
-        bat '''
-        
-        '''
       }
     }  
-    stage('test') {
+    stage('Testing') {
       steps {
         bat '''
-        npx playwright test BrasilCORS.spec.js --workers 5 --project=firefox --reporter=line,allure-playwright
+        npx playwright test --workers 5 --project=firefox --reporter=line,allure-playwright
         '''
       }
     }
   }
-    post('allure report'){
+    post('Creating a report'){
       always{
-        bat'''
-        npx allure generate ./allure-results --clean
-        '''
         script {
           allure([
         includeProperties: false, 
@@ -34,6 +28,9 @@ pipeline {
         results: [[path: 'allure-results']]
         ])
       }
+    }
+      failure {
+        slackSend color: "ff0000", message: "I see an error in the console, maybe even CORS. CHECK IT!"
     }
   }
 }

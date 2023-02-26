@@ -7,33 +7,29 @@ pipeline {
           npx playwright install firefox
         '''
         bat '''
-          npm i -D @playwright/test allure-playwright
+          npm i -D @playwright/test allure-playwright allure-commandline
         '''
         bat '''
-        allure generate .\allure-results\ --clean
+        
         '''
       }
     }  
     stage('test') {
       steps {
         bat '''
-        npx playwright test --workers 5 --project=firefox --reporter=line,allure-playwright
+        npx playwright test BrasilCORS.spec.js --workers 5 --project=firefox --reporter=line,allure-playwright
         '''
       }
     }
   }
     post('allure report'){
       always{
-        script {
-          allure([
-        includeProperties: false, 
-        jdk: 'JDK', 
-        results: [[path: 'allure-results']]
-        ])
-      }
-    }
-      failure{
-        slackSend color: "bad", message: "Message from Jenkins Pipeline"
+        bat'''
+        npx allure generate ./allure-results --clean
+        '''
+        bat'''
+        npx allure open ./allure-report
+        '''
     }
   }
 }

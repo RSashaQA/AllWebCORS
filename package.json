@@ -9,6 +9,7 @@
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.31.1",
+    "allure-commandline": "^2.21.0",
     "allure-playwright": "^2.0.0"
   },
   "dependencies": {

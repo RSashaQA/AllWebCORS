@@ -9,9 +9,9 @@
   "allureFolder": "allure-report",
   "enableChart": true
 },
-    "slack": {
-      "token": "xoxb-3803282626292-4884541700880-3w6aSs9unKN68hiWGFDzGBHF",
-      "chat": "monitoring-web",
+    "telegram": {
+      "token": "6134864024:AAHm5bq7SHqO7ZvAqHJJIYcFbmdpQ6UFLOM",
+      "chat": "-1001865640706",
       "replyTo": ""
     },
     "proxy": {

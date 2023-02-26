@@ -27,9 +27,13 @@ pipeline {
         bat'''
         npx allure generate ./allure-results --clean
         '''
-        bat'''
-        npx allure open ./allure-report
-        '''
+        script {
+          allure([
+        includeProperties: false, 
+        jdk: 'JDK', 
+        results: [[path: 'allure-results']]
+        ])
+      }
     }
   }
 }

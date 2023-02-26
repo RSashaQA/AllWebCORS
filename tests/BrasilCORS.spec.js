@@ -25,7 +25,7 @@ test("visit Brasil website and check errors in console with logger", async ({ pa
       throw new Error(msg.text());
     }
   })
-
+  
   const response = await page.goto(process.env.ENVIRONMENT_URL || 'https://brasilaovivo.tv/araruna_tv');
   expect(response.status()).toBeLessThan(400);
 

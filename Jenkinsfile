@@ -9,6 +9,9 @@ pipeline {
         bat '''
           npm i -D @playwright/test allure-playwright allure-commandline
         '''
+        bat '''
+          npm install --save-dev netlify-cli
+        '''
       }
     }
     stage('Testing') {
@@ -31,7 +34,7 @@ pipeline {
     }
       failure {
         bat '''
-        java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.2.1.jar
+        call report.bat
         '''
     }
   }

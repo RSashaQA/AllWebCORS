@@ -10,7 +10,8 @@
   "devDependencies": {
     "@playwright/test": "^1.31.1",
     "allure-commandline": "^2.21.0",
-    "allure-playwright": "^2.0.0"
+    "allure-playwright": "^2.0.0",
+    "netlify-cli": "^13.0.0"
   },
   "dependencies": {
     "request-promise-native": "^1.0.9",

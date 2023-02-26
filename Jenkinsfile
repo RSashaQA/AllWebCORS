@@ -10,7 +10,7 @@ pipeline {
           npm i -D @playwright/test allure-playwright allure-commandline
         '''
       }
-    }  
+    }
     stage('Testing') {
       steps {
         bat '''
@@ -23,8 +23,8 @@ pipeline {
       always{
         script {
           allure([
-        includeProperties: false, 
-        jdk: 'JDK', 
+        includeProperties: false,
+        jdk: 'JDK',
         results: [[path: 'allure-results']]
         ])
       }

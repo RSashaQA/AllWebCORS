@@ -10,7 +10,7 @@ pipeline {
           npm i -D @playwright/test allure-playwright
         '''
         bat '''
-      allure generate allure-results -o allure-report --clean
+        allure generate .\allure-results\ --clean
         '''
       }
     }  

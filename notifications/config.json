@@ -10,7 +10,7 @@
   "enableChart": true
 },
     "slack": {
-      "token": "xoxb-3803282626292-4884541700880-kTXEASTsy38FDXeTeBKV1hRn",
+      "token": "xoxb-3803282626292-4884541700880-3w6aSs9unKN68hiWGFDzGBHF",
       "chat": "monitoring-web",
       "replyTo": ""
     },

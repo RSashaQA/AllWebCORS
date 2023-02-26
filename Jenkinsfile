@@ -20,12 +20,10 @@ pipeline {
     }
   }
     post('allure report'){
-          always{
-      bat'''
-      allure generate allure-results -o allure-report --clean
-      '''
-    }
       always{
+        bat'''
+      allure generate allure-results -o allure-report --clean
+      ''',
         script {
           allure([
         includeProperties: false, 

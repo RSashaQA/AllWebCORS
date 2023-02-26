@@ -30,9 +30,14 @@ pipeline {
       }
     }
       failure {
-        bat '''
-        java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.2.1.jar
-        '''
+        publishHTML([
+          allowMissing: false,
+          alwaysLinkToLastBuild: false, 
+          keepAll: false, 
+          reportDir: 'allure-report', 
+          reportFiles: 'index.html', 
+          reportName: 'HTML Report', reportTitles: '', 
+          useWrapperFileDirectly: true])
     }
   }
 }

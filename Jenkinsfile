@@ -34,13 +34,10 @@ pipeline {
     }
       failure {
         bat '''
-        cd allure-report | npx netlify login
+        call build.bat
         '''
         bat '''
-        cd allure-report | npx netlify build
-        '''
-        bat '''
-        cd allure-report | npx netlify deploy --prod --dir .
+        call deploy.bat
         '''
     }
   }

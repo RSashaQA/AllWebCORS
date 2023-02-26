@@ -1,6 +1,6 @@
 {
   "base": {
-  "logo": "logo.png",
+  "logo": "",
   "project": "Errors on websites",
   "environment": "",
   "comment": "I see an ERROR in the console. CHECK IT!",
@@ -10,7 +10,7 @@
   "enableChart": true
 },
     "slack": {
-      "token": "xoxb-3803282626292-4860770107890-j5vpQS6gcOMDuXfZgKEWLuwa",
+      "token": "xoxb-3803282626292-4884541700880-kTXEASTsy38FDXeTeBKV1hRn",
       "chat": "monitoring-web",
       "replyTo": ""
     },

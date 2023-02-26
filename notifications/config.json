@@ -4,7 +4,7 @@
   "project": "Errors on websites",
   "environment": "",
   "comment": "I see an ERROR in the console. CHECK IT!",
-  "reportLink": "",
+  "reportLink": "https://lhdreport.netlify.app",
   "language": "en",
   "allureFolder": "allure-report",
   "enableChart": true

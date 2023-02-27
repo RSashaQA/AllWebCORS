@@ -1,4 +1,4 @@
-import logger from 'logger.js'
+import logger from "../../logger.js"
 const { test, expect } = require("@playwright/test");
 const { broadcaster } = require("../../constants")
 test.setTimeout(120000);

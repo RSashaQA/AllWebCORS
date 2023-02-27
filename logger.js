@@ -1,4 +1,4 @@
-const { teapot_error, media_error, videojs_error, playlist_error, cors_error, broadcaster } = require("../../constants")
+const { teapot_error, media_error, videojs_error, playlist_error, cors_error, broadcaster } = require("./constants")
 
 export default function (page) {
     page.on("console", (msg) => {

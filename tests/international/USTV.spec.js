@@ -3,7 +3,7 @@ const { teapot_error, media_error, videojs_error, playlist_error, cors_error, br
 test.setTimeout(120000);
 test.use({
   viewport: { width: 1920, height: 1080 },
-  ignoreHTTPSErrors: false,
+  ignoreHTTPSErrors: true,
   // extraHTTPHeaders: {
   //   Accept: '*/*',
   //   Referer: 'https://us-live.tv/',
@@ -36,5 +36,5 @@ test("visit us-live.tv website and check errors in console with logger", async (
   await page.waitForResponse(resp => resp.url().includes(broadcaster), { timeout: 50000 })
 
   await page.waitForTimeout(5000)
-  await page.screenshot({ path: "screenshots/us-live.tv.png" })
+  //await page.screenshot({ path: "screenshots/us-live.tv.png" })
 })

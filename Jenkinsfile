@@ -22,19 +22,10 @@ pipeline {
       failure {
         sh '''
         cd allure-report
-        npx netlify login
-        '''
-        sh '''
-        cd allure-report
-        npx netlify link
-        '''
-        sh '''
-        cd allure-report
         npx netlify build
         '''
         sh '''
-        cd allure-report
-        npx netlify deploy --prod --dir .
+        npx netlify deploy --prod --dir allure-report/
         '''
         sh '''
          java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.2.1.jar

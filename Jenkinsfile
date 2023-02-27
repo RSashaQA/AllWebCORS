@@ -22,6 +22,14 @@ pipeline {
       failure {
         sh '''
         cd allure-report
+        npx netlify login
+        '''
+        sh '''
+        cd allure-report
+        npx netlify link
+        '''
+        sh '''
+        cd allure-report
         npx netlify build
         '''
         sh '''

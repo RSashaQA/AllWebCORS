@@ -10,7 +10,7 @@ pipeline {
     }
   }
     post('Creating a report'){
-      always{
+      failure {
         script {
           allure([
         includeProperties: false,
@@ -18,8 +18,6 @@ pipeline {
         results: [[path: 'allure-results']]
         ])
       }
-    }
-      failure {
         sh '''
         cd allure-report
         npx netlify build

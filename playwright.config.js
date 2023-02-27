@@ -35,8 +35,8 @@ module.exports = defineConfig({
   use: {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
-    screenshot: "off",
-    trace: "off"
+    screenshot: "only-on-failure",
+    trace: "on-first-retry"
   },
 
   /* Configure projects for major browsers */

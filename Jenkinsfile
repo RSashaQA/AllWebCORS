@@ -1,19 +1,6 @@
 pipeline {
   agent any
   stages {
-    stage('Preparation of the working space') {
-      steps {
-        sh '''
-          npx playwright install firefox
-        '''
-        sh '''
-          npm i -D @playwright/test allure-playwright allure-commandline
-        '''
-        sh '''
-          npm install --save-dev netlify-cli
-        '''
-      }
-    }
     stage('Testing') {
       steps {
         sh '''
@@ -34,10 +21,12 @@ pipeline {
     }
       failure {
         sh '''
-        call build.bat
+        cd allure-report
+        npx netlify build
         '''
         sh '''
-        call deploy.bat
+        cd allure-report
+        npx netlify deploy --prod --dir .
         '''
         sh '''
          java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.2.1.jar

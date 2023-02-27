@@ -26,7 +26,7 @@ test("visit brasilaovivo.tv website and check errors in console with logger", as
     }
   })
   
-  const response = await page.goto(process.env.ENVIRONMENT_URL || 'https://brasilaovivo.tv/araruna_tv');
+  const response = await page.goto(process.env.ENVIRONMENT_URL || 'https://brasilaovivo.tv/rede_nova_tv');
   expect(response.status()).toBeLessThan(400);
 
   try {

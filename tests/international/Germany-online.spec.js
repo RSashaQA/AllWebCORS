@@ -17,7 +17,7 @@ test("visit germany-online.tv website and check errors in console with logger", 
 
   logger(page)
 
-  const response = await page.goto(process.env.ENVIRONMENT_URL || 'https://germany-online.tv/filstalwelle_tv_deu');
+  const response = await page.goto(process.env.ENVIRONMENT_URL || 'https://germany-online.tv/tv_berlin_deu');
   expect(response.status()).toBeLessThan(400);
 
   try {

@@ -17,7 +17,7 @@ test("visit afriqueendirect.tv website and check errors in console with logger",
 
   logger(page)
 
-  const response = await page.goto(process.env.ENVIRONMENT_URL || 'https://afriqueendirect.tv/diama_tv_fr');
+  const response = await page.goto(process.env.ENVIRONMENT_URL || 'https://afriqueendirect.tv/mader_tv_fr');
   expect(response.status()).toBeLessThan(400);
 
   try {

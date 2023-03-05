@@ -17,7 +17,7 @@ test("visit turkcanli.tv website and check errors in console with logger", async
 
   logger(page)
 
-  const response = await page.goto(process.env.ENVIRONMENT_URL || 'https://turkcanli.tv/tv_264_tur');
+  const response = await page.goto(process.env.ENVIRONMENT_URL || 'https://turkcanli.tv/alanyatv_tur');
   expect(response.status()).toBeLessThan(400);
 
   try {

@@ -10,6 +10,11 @@ pipeline {
     }
   }
     post('Creating a report'){
+      always {
+        sh'''
+          rm -rm /var/lib/jenkins/workspace/cors-all-web/allure-report
+          '''
+      }
       failure {
         script {
           allure([

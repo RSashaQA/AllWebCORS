@@ -5,6 +5,10 @@ pipeline {
       steps {
         sh '''
         rm -rf /var/lib/jenkins/workspace/cors-all-web/allure-results
+        '''
+      }
+      steps {
+        sh '''
         rm -rf /var/lib/jenkins/workspace/cors-all-web/allure-reports
         '''
       }

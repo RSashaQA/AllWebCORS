@@ -1,19 +1,21 @@
 pipeline {
   agent any
   stages {
-    stage('Clean workspace') {
+    stage('Clean results') {
       steps {
         sh '''
         rm -rf /var/lib/jenkins/workspace/cors-all-web/allure-results
         '''
       }
+    }
+    stage('Clean reports') {
       steps {
         sh '''
         rm -rf /var/lib/jenkins/workspace/cors-all-web/allure-reports
         '''
       }
     }
-        stage('Testing') {
+    stage('Testing') {
       steps {
         sh '''
         npx playwright test --workers 5 --project=firefox --reporter=line,allure-playwright

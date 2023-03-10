@@ -40,8 +40,8 @@ pipeline {
         npx netlify deploy --prod --dir allure-report/
         '''
         sh '''
-         java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.2.1.jar
-         '''
+        java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.2.1.jar
+        '''
     }
   }
 }

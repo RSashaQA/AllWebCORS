@@ -38,9 +38,9 @@ test("visit limehd.tv website and check errors in console with logger", async ({
   //await page.screenshot({ path: "screenshots/limehd.tv.png" });
 })
 
-// test("visit limehd.tv/movies and check errors in console with logger", async ({ page }) => {
+// test("visit limehd.tv/movies and check errors", async ({ page }) => {
 
-//   logger(page)
+//   //logger(page)
 
 //   const response = await page.goto(process.env.ENVIRONMENT_URL || 'https://limehd.tv/movies');
 //   expect(response.status()).toBeLessThan(400);
@@ -48,7 +48,6 @@ test("visit limehd.tv website and check errors in console with logger", async ({
 //   await expect(page).toHaveURL(/.*movies/)
 
 //   await page.waitForSelector('.slider__list')
-
 // })
 
 // test("visit limehd.tv/, login, then try to by subscribes with yoomoney", async ({ page }) => {

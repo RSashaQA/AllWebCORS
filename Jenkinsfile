@@ -11,7 +11,7 @@ pipeline {
     stage('Clean reports') {
       steps {
         sh '''
-        rm -rf /var/lib/jenkins/workspace/cors-all-web/allure-reports
+        rm -rf /var/lib/jenkins/workspace/cors-all-web/allure-report
         '''
       }
     }
